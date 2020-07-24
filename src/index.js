@@ -26,6 +26,7 @@ const server = new ApolloServer({
     launchAPI: new LaunchAPI(),
     userAPI: new UserAPI({ store }),
   }),
+  playground: true,
   engine: {
     reportSchema: true,
   },

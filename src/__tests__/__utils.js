@@ -1,6 +1,6 @@
-const { HttpLink } = require('apollo-link-http');
-const fetch = require('node-fetch');
-const { execute, toPromise } = require('apollo-link');
+const { HttpLink } = require("apollo-link-http");
+const fetch = require("node-fetch");
+const { execute, toPromise } = require("apollo-link");
 
 module.exports.toPromise = toPromise;
 
@@ -13,7 +13,7 @@ const {
   LaunchAPI,
   UserAPI,
   store,
-} = require('../');
+} = require("../");
 
 /**
  * Integration testing utils
@@ -38,7 +38,7 @@ module.exports.constructTestServer = constructTestServer;
  * e2e Testing Utils
  */
 
-const startTestServer = async server => {
+const startTestServer = async (server) => {
   // if using apollo-server-express...
   // const app = express();
   // server.applyMiddleware({ app });
@@ -47,7 +47,7 @@ const startTestServer = async server => {
   const httpServer = await server.listen({ port: 0 });
 
   const link = new HttpLink({
-    uri: `http://localhost:${httpServer.port}`,
+    uri: `space-x-tuts.herokuapp.com:${httpServer.port}`,
     fetch,
   });
 
